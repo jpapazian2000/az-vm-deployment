@@ -8,7 +8,7 @@ data "azurerm_resource_group" "project_rg" {
 }
 
 data "azurerm_image" "templateImage" {
-    name = "az-vm-template"
+    name = "az-vm-template2"
     resource_group_name = data.azurerm_resource_group.project_rg.name
 }
 
@@ -16,7 +16,7 @@ data "azurerm_image" "templateImage" {
 module "jpapazian_az_vm" {
     
   source  = "app.terraform.io/jpapazian-org/jpapazian-az-vm/azurerm"
-  version = "0.2.2"
+  version = "0.2.3"
     for_each                    = local.az_zones
     m_az_zone                   = each.value
     //m_az_zone                   = "2"
