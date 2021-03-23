@@ -1,6 +1,6 @@
 # auchan-poc
 
-![auchan_logo](https://github.com/jpapazian2000/auchan-poc/tree/a5eb628d525680dc4d76576576dda442b0994f14/images/auchan.gif)
+![auchan_logo](https://github.com/jpapazian2000/az-vm-deployment/blob/master/images/auchan.gif)
 
 ## Preparation
 
