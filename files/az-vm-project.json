@@ -1,0 +1,36 @@
+{
+  "builders": [{
+    "type": "azure-arm",
+
+    "client_id": "xxxxxxxxxxx",
+    "client_secret": "xxxxxxxxxxx",
+    "tenant_id": "xxxxxxxxxxx",
+    "subscription_id": "xxxxxxxxxxx",
+
+    "managed_image_resource_group_name": "jpapazian-ARI",
+    "managed_image_name": "az-vm-template",
+
+    "os_type": "Linux",
+    "image_publisher": "OpenLogic",
+    "image_offer": "CentOS",
+    "image_sku": "7_9",
+
+    "azure_tags": {
+        "owner": "jpapazian",
+        "project": "customer demo"
+    },
+
+    "location": "France Central",
+    "vm_size": "Standard_DS2_v2",
+    "os_disk_size_gb": "30"
+}],
+  "provisioners": [{
+    "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E sh '{{ .Path }}'",
+    "inline": [
+
+      "/usr/sbin/waagent -force -deprovision+user && export HISTSIZE=0 && sync"
+    ],
+    "inline_shebang": "/bin/sh -x",
+    "type": "shell"
+  }]
+}
