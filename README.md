@@ -16,22 +16,22 @@ In order to do so we will first create à packer image of the image we want to d
 There is a packer template file in the files directory of this github repo
 Fill in the mandatory fields:
 ```
-    "client_id": "xxxxxxxxxxx",
-    "client_secret": "xxxxxxxxxxx",
-    "tenant_id": "xxxxxxxxxxx",
-    "subscription_id": "xxxxxxxxxxx",
+"client_id": "xxxxxxxxxxx",
+"client_secret": "xxxxxxxxxxx",
+"tenant_id": "xxxxxxxxxxx",
+"subscription_id": "xxxxxxxxxxx",
 ```
 Next if needed add some tags:
 ```
 "azure_tags": {
-        "owner": "xxxxxxx",
-        "project": "customer demo"
+    "owner": "xxxxxxx",
+    "project": "customer demo"
     },
 ```
 Then, add also the azure resource group and the name of the template who will host the template:
 ```
 "managed_image_resource_group_name": "xxxxxxx-rg",
-    "managed_image_name": "az-vm-template",
+"managed_image_name": "az-vm-template",
 ```
 
 And finally do not forget to indicate the location where you want your template to be deployed:
@@ -74,4 +74,5 @@ ARM_CLIENT_SECRET
 ARM_TENANT_ID
 ````
 
+If you have already connected your vcs (github) to your terraform workspace, then you need to queue a plan in tfcb
 
